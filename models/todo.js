@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
       try {
         const dueTodos = await Todo.findAll({
           where: {
-            dueDate: { [Op.lt]: today },
-            completed: false
+            dueDate: { [Op.lt]: today }
+
           }
         });
       } catch (error) {
@@ -52,8 +52,8 @@ module.exports = (sequelize, DataTypes) => {
       try {
         const todayTodos = await Todo.findAll({
           where: {
-            dueDate: today,
-            completed: false
+            dueDate: today
+
           }
         });
       } catch (error) {
@@ -67,8 +67,8 @@ module.exports = (sequelize, DataTypes) => {
       try {
         const dueLaterTodos = await Todo.findAll({
           where: {
-            dueDate: { [Op.gt]: today },
-            completed: false
+            dueDate: { [Op.gt]: today }
+
           }
         });
       } catch (error) {
